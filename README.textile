@@ -1,0 +1,39 @@
+h1. CodeIgniter Image Cache
+
+CodeIgniter library to generate and cache images on the fly.
+
+h2. Setup
+
+# Edit config/image_cache.php file with appropiate settings
+# Copy config, controller and model file to your CodeIgniter installation
+# Load config/image_cache.php file in your config/autoload.php
+# Create a directory for images and give CodeIgnite write permissions
+
+h2. Settings
+
+Parametres inside config/image_cache.php
+
+* ic_upload_directory -> Directory, from root application, where Image Cache will look for the source images
+* ic_resize_limit -> Maximum number of versions that Image Cache will create of each image
+
+h2. How it works
+
+Image Cache listens the "/img" requests with 'w' and 'h' get URL parameteres, look if there's a cache version available and if not, creates it on the fly and saves it. You can call the images with parameters from the template itself.
+
+To avoid brute force attacks, you can set a limit of versions of each image that Image Cache will create. 
+
+Call the image without parameters shows a 404 error.
+
+h2. Example of use
+
+Call an image from your templates with 'w' and 'h' get URL parameteres. Image Cache will create an image with the size, filling all the pixels from the source image.
+
+Resize + Crop:
+<img src="/img/picture_1.jpg?w=500&amp;h=300" />
+
+Resize:
+<img src="/img/picture_2.jpg?w=700" />
+<img src="/img/picture_2.jpg?h=400" />
+
+You can call for images in subdirectories as well:
+<img src="/img/news/new_1/picture_1.jpg?w=500&amp;h=300" />
