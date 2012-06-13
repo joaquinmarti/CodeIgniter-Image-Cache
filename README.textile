@@ -29,11 +29,11 @@ h2. Example of use
 Call an image from your templates with 'w' and 'h' get URL parameteres. Image Cache will create an image with the size, filling all the pixels from the source image.
 
 Resize + Crop:
-<img src="/img/picture_1.jpg?w=500&amp;h=300" />
+&lt;img src="/img/picture_1.jpg?w=500&amp;h=300" /&gt;
 
 Resize:
-<img src="/img/picture_2.jpg?w=700" />
-<img src="/img/picture_2.jpg?h=400" />
+&lt;img src="/img/picture_2.jpg?w=700" /&gt;
+&lt;img src="/img/picture_2.jpg?h=400" /&gt;
 
 You can call for images in subdirectories as well:
-<img src="/img/news/new_1/picture_1.jpg?w=500&amp;h=300" />
+&lt;img src="/img/news/new_1/picture_1.jpg?w=500&amp;h=300" /&gt;
